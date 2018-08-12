@@ -11930,19 +11930,19 @@ Name: MEDV, dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -12002,10 +12002,21 @@ Standard deviation of prices: $165340.27765266784
 
 </div>
 </div>
-</div>**Answer: **
-* 'RM' More rooms often equals bigger homes equals higher price.
-* 'LSTAT' Lower percentage in this means higher classes, that naturaly trends higher prices.
-* 'PTRATIO' This is hard but intuition says that prices in neighborhood with higher percentage secondary is higher.
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Answer: </strong></p>
+<ul>
+<li>'RM' More rooms often equals bigger homes equals higher price.</li>
+<li>'LSTAT' Lower percentage in this means higher classes, that naturaly trends higher prices.</li>
+<li>'PTRATIO' This is hard but intuition says that prices in neighborhood with higher percentage secondary is higher.</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12127,6 +12138,39 @@ Standard deviation of prices: $165340.27765266784
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">performance_metric</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">8.8</span><span class="p">,</span> <span class="mf">6.3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model has a coefficient of determination, R^2, of </span><span class="si">{:.3f}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Model has a coefficient of determination, R^2, of 0.707.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12150,8 +12194,14 @@ Standard deviation of prices: $165340.27765266784
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-It prediced the variance pretty good.</p>
+<p><strong>Answer:</strong><br>
+R2 score of 92.2 tells us that the distance from the regression line of our model,
+is on avarage 7.8% off from our predicted values Y compared to our target X.<br>
+If this really is a good model or not though, is dependant of what we are acctually measuring.<br>
+I would consider that this model captured the variance pretty well.<br>
+A perfect success and match for the variance would need 1.<br>
+If we got an perfect 1 I would suspect something fishy with the model/data/training split.<br>
+But again, it totaly dependes on what we are measuring. which in this case is just made up numbers. :)<br></p>
 
 </div>
 </div>
@@ -12228,7 +12278,7 @@ It prediced the variance pretty good.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong><br>
+<p><strong>Answer:</strong><br>
 It is crucial to split the data to be able to measure the performance of a model.<br>
 You need to have subsets of truths to validate and test, that is diffrent from the training data.
 The easiest way for non continuous data is to just randomly split.
@@ -12327,8 +12377,13 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> max-depth 3. When going higher it tend to overfit the trainingdata.<br>
-You get a distinct elbow around 50 points on the test score, 350 seem more than enough in this case.</p>
+<p><strong>Answer:</strong><br>
+I pick max_depth 3. When going higher it tend to overfit the trainingdata a bit.<br>
+The training score goes down as we are adding more points, but at the same time our tests go up.<br>
+On max_depth 3 we perform better than on less depth and at the same time our training score converges pretty well with our test scores when adding points.<br>
+You get a distinct elbow around 50 points on the test score, 350 point seem more than enough in this case.<br><br>
+On deeper trees you see that while training scores is higher, it does not converge with our test score as well.<br>
+On lower depth it converges better, but is underfit, giving us lower scores.</p>
 
 </div>
 </div>
@@ -12395,8 +12450,12 @@ You get a distinct elbow around 50 points on the test score, 350 seem more than 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> High bias on max_depth 1 and high variance on max_depth 10.
-It underfit on 1 with low scores on both training and validation and overfit on 10, as validate decreases with higher variance while the training score is more and more top notch.</p>
+<p><strong>Answer:</strong><br>
+High bias on max_depth 1 and high variance on max_depth 10.
+It underfit on 1 with low scores on both training and validation and overfit on 10, as validate decreases with higher variance while the training score is more and more top notch.<br>
+You can see this in the graph as the training and testing separates more and more.<br>
+After max_depth 3 our validation score starts to fall while training score continues to rise.<br>
+This means it gets better and better tuned for the trainingdata while doing worse and worse generalizing over the validation, overfitting the trainingdata.</p>
 
 </div>
 </div>
@@ -12418,7 +12477,8 @@ It underfit on 1 with low scores on both training and validation and overfit on 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I would go for max_depth 3 as we have a clear elbow on validation with highest scores while still close to training curve.</p>
+<p><strong>Answer:</strong><br> 
+I would go for max_depth 3 as we have a clear elbow on validation with highest scores while still close to training curve.</p>
 
 </div>
 </div>
@@ -12450,7 +12510,7 @@ It underfit on 1 with low scores on both training and validation and overfit on 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Grid search takes hyperparameters, generates a grid with them and run all combinations to find the best estimated parameter combo. For example max_depth discussed in previous section is a perfect candidate if you use for example decisiontrees. It actually does kind of that analyzis we did above, evaluates by the score function provided.. so we can take a coffe break meanwhile instead of analysing curves. ;)</p>
+<p><strong>Answer:</strong><br> Grid search takes hyperparameters, generates a grid with them and run all combinations to find the best estimated parameter combo. For example max_depth discussed in previous section is a perfect candidate if you use for example decisiontrees. It actually does kind of that analyzis we did above, evaluates by the score function provided.. so we can take a coffe break meanwhile instead of analysing curves. ;)</p>
 
 </div>
 </div>
@@ -12475,8 +12535,12 @@ It underfit on 1 with low scores on both training and validation and overfit on 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> As we are using testing score to make assumptions and tune our model we really should separate our data even more, so that we have separate data for both intermediate validation and final testing.<br>
-K-Fold Cross validation is a technique where we instead of having fixed validation and testing data, separate the training data into 'K' number of buckets and use one of those buckets for validation, switching which data we use for validation every run.</p>
+<p><strong>Answer:</strong><br> 
+As we are using testing score to make assumptions and tune our model we really should separate our data even more, so that we have separate data for both intermediate validation and final testing.<br><br>
+A problem is that we then are throwing away more and more of our data that could have been used to make the model better.<br>
+One way to solve this problem is by using K-Fold Cross validation.<br>
+K-Fold Cross validation is a technique where it instead of having fixed validation and testing data, separate the training data into 'K' number of buckets and use one of those buckets for validation. It then rotates which bucket it uses for validation every run until it used all data buckets both for training and validation.<br>
+Performance is then measured by the average performance of these runs for the report.<br></p>
 
 </div>
 </div>
